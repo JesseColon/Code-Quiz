@@ -25,6 +25,13 @@ body {
   margin-top: 16px;
 }
 
+.next-button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  max-height: 50px;
+}
+
 button {
   background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,96,33,0.9542191876750701) 100%);
   border-radius: 8px;
@@ -64,12 +71,12 @@ section {
   border-radius: 8px;
 }
 
-#word-guess {
+.word-guess {
   width: 55vw;
   height: 400px;
 }
 
-#results {
+.results {
   width: 30vw;
   height: 400px;
 }
