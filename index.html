@@ -15,13 +15,13 @@
     <main>
       <section>
         <div class="card word-guess">
-          <div id="quiz" class="large-font">ARE YOU READY?!<P>(press start)</P> </div>
-          <ul>
-            <p class="answer med-font"></p>
-            <p class="answer med-font"></p>
-            <p class="answer med-font"></p>
-            <p class="answer med-font"></p>
-          </ul>
+          <div class="large-font question">ARE YOU READY?!<P>(press start)</P> </div>
+          <div id="answers" class="answer-box answers">
+            <!-- <button class="answer med-font"></button>
+            <button class="answer med-font"></button>
+            <button class="answer med-font"></button>
+            <button class="answer med-font"></button> -->
+          </div>
           <button class=" next-button-container " id="submit">Finish</button>
           
 
@@ -34,13 +34,15 @@
         <div  class="card results">
           <div class = "win-loss-container">
           <div>
-          <h2>HighScore: <span class="high-score-count">0 </span> </h2>
-        </div>
+            <h2><span class="question-number">  </span></h2>
+            <h2>HighScore: <span class="highScoreCount">0</span> </h2>
+            <h2>Score: <span class="current-score">0 </span> </h2>
+         </div>
           <button class="reset-button">Reset Score</button>
       </div>
           <div class= "card timer">
             <div class = "timer-text">
-            <div id="timer-count" class="large-font">90</div>
+            <div id="timer-count" class="large-font">30</div>
             <h3>seconds remaining</h3>
           </div>
         
