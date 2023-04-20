@@ -17,6 +17,7 @@ var highScoreCount = 0;
 var que_count = 0;
 
 // create object of question functions
+
 startEl.onclick = () => {
      console.log("print when clicked");
     finish = false;
@@ -34,13 +35,9 @@ function init() {
 
 
 
- function startQuiz() {
-  
-}
 
 
-
-
+//   handling timer func here
 
 function countDownStart () {
 
@@ -69,7 +66,7 @@ function countDownStart () {
 
 };}
 
-
+// questions listed here
 
 var questions = [
 
@@ -78,10 +75,10 @@ var questions = [
     correctAnswer: "D. Jesse",
     question: "what is my name?",
     answers: [
-       { text:"A. Chris" },
-       { text:"B. Sean" },
-       { text:"C. Sam" },
-       { text:"D. Jesse" }
+       { text:"Chris" },
+       { text:"Sean" },
+       { text:"Sam" },
+       { text:"Jesse" }
     ],
        
    
@@ -92,10 +89,10 @@ var questions = [
      correctAnswer: "A. thats" ,
      question: "the answer is A",
      answers:[
-        {text: "A. thats" },
-        {text: "B. not" },
-        {text: "C. a" },
-        {text: "D. question" }
+        {text: "A.thats" },
+        {text: "B.not" },
+        {text: "C.a" },
+        {text: "D.question" }
  ]
      
  },
@@ -105,69 +102,42 @@ var questions = [
      correctAnswer: "C. <--",
      question: "the answer is here... I think?",
      answers: [
-        { text: "A. nope" },
-        { text: "B. not it" },
-        { text: "C. <--" },
-        { text: "D. the arrows a lie" }
+        { text: "nope" },
+        { text: "not it" },
+        { text: "this one" },
+        { text: "lies" }
      ]
      
  }
 ]
 
-// var questionsArray = [question, question2, question3];
 
-//function showquestion() {
-    //  console.log(currentQuestion);
-     
-    //addAnswers();
-
-    //  questionsArray[0].textContent = question.title;
-//var q = questionsArray[currentQuestion]
-//quizEl.textContent = q.title
-//answer.forEach(function(element, index){
-    //element.textContent = q.answer[index];
-
-  //element.addEventListener('click', function(){
-
-       //if(q.correctAnswer == index && currentQuestion < [2]) {
-        //scoreup()
-       // nextQuestion()
-
-       //}else{
-
-        //console.log('wrong');
-       // minusCounter()
-       // nextQuestion()
-      // }
-
-  //  });
-
-
-//});
-//}
 
 function showQuestion(index) {
 
-    //question number changes
-
     let queNumber = 'Question ' + questions[index].numb;
+
     questionNumberElement.innerHTML = queNumber;
 
-    //question changes
+    
     let que = questions[index].question;
+
     questionElement.innerHTML = que;
 
-    //answers change
+    
     questions[index].answers.forEach(answer => {
+
         const button = document.createElement('button')
+
         button.innerText = answer.text
+
         button.classList.add('answer')
-        //when answer is selected
+        
         if (answer.correct) {
             button.dataset.correct = answer.correct
         }
         button.addEventListener('click', selectAnswer)
-        // index++;
+
         answersElement.appendChild(button)
     })
 }
@@ -178,7 +148,7 @@ function selectAnswer(answer) {
     var userAns = answer.target.innerText;
     var correctAns = questions[que_count].correctAnswer;
     if (userAns == correctAns) {
-        scoreCounter++;
+        scoreup();
     }
     resetState();
     if (que_count < questions.length - 1) {
@@ -190,13 +160,14 @@ function selectAnswer(answer) {
     }
 }
 
+// need to find a more eficient way to do this
 
  function minusCounter() {
-     timerEl.textContent--
-     timerEl.textContent--
-     timerEl.textContent--
-     timerEl.textContent--
-     timerEl.textContent--
+     timerCount--;
+     timerCount--;
+     timerCount--;
+     timerCount--;
+     timerCount--;
 
  }
 
@@ -221,7 +192,7 @@ function resetState() {
 
 
 
-//   handling timer func here
+
 
 
 
@@ -237,7 +208,7 @@ function gameover(){
 
 }
 
-
+// trying to set and get score
 
 function scoreup(){
 scoreCounter++;
@@ -277,7 +248,7 @@ getscore()
 // event listeners listed bellow
 
 finishBtn.addEventListener("click", function(){
-    console.log('clicked');
+    window.location.reload();
 } )
 
 
